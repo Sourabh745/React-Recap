@@ -13,3 +13,9 @@ export const TodoContext = createContext({
     deleteTodo: (id) => {},
     toggleComplete: (id) => {} //for todo if it is done or not 
 })
+ 
+//create custom useHook
+export const useTodo = () => {
+    return useContext(TodoContext)
+}
+export const TodoProvider = TodoContext.Provider
