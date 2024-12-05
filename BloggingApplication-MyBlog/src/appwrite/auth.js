@@ -38,14 +38,14 @@ export class AuthService {
         try {
             return await this.account.getCurrentUser()
         } catch (error) {
-            console.log("appwrite service :: getCurrentUser() :: ", error);     
+            console.log("appwrite service :: getCurrentUser() :: ", error);
         }
     }
     async logout() {
         try {
             await this.account.deleteSessions()
         } catch (error) {
-            console.log("appwrite service :: logout() :: ", error); 
+            console.log("appwrite service :: logout() :: ", error);
         }
     }
 }
