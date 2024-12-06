@@ -1,7 +1,7 @@
 import conf from "../conf/conf.js"
 import {Client, Account, ID} from "appwrite"
 
-//this client and account are repeat everytime so we write it here
+// client and account are repeat everytime so we write it here
 export class AuthService {
     client = new Client();
     account;
