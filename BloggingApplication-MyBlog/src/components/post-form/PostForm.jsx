@@ -1,7 +1,7 @@
 import React,{ useCallback } from "react";
 import { get, useForm } from "react-hook-form";
 import Button from "../Button"
-import Input from "./Input";
+import Input from "../Input";
 import RTE from "../RTE";
 import Select from "../Select";
 import appwriteService from "../../appwrite/config";
@@ -58,7 +58,7 @@ export default function PostForm({post}){
             }
         }
     }
-
+// transform value into url friendly string like title = my book to slug = my-book
     const slugTransform = useCallback((value) => {
         if(value && typeof value === "string"){
             return value.trim().toLowerCase()
@@ -77,14 +77,13 @@ export default function PostForm({post}){
 
         return (
             <form onSubmit={handleSubmit}
-            className="flex flex-wrap"
-            >
+            className="flex flex-wrap" >
                 <div className="w-2/3 px-2">
                     <Input
                     label = 'Title'
                     placeholder = 'Title'
                     className = "mb-4"
-                    {...register("title", {required: true})}
+                    {...register("title", {required: true})} //Registers the title field with react-hook-form under the key "title". other fields automatically add.
                     />
                     <Input
                     label = 'Slug :'
@@ -99,7 +98,7 @@ export default function PostForm({post}){
                         label="Content: "
                         name= "content"
                         control={control}
-                        defaultValue= {getValues("content)"}
+                        defaultValue= {getValues("content")}
                     />
                 </div>
                 <div className="1/3 px-2">

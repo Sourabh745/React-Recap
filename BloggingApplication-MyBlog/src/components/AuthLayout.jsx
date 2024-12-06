@@ -1,4 +1,6 @@
 //only login user is allowed here
+// this file is redirect login user to home page
+
 import React, { useEffect, useState } from 'react';
 import {useSelector} from 'react-redux'
 import {useNavigate} from 'react-router-dom'
