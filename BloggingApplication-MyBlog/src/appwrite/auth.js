@@ -15,12 +15,12 @@ export class AuthService {
 
     async createAccount({email, password, name}) {
         try {
-            const user = await this.account.create(ID.unique(), email, password, name)
+            const userAccount = await this.account.create(ID.unique(), email, password, name)
 
-            if(user){
+            if(userAccount){
                 return this.login({email, password})
             }else{
-                return user
+                return userAccount
             }
         } catch (error) {
             console.log(error);

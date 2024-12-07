@@ -50,7 +50,7 @@ const router = createBrowserRouter([
         )
       },
       {
-        path: '/add-posts',
+        path: '/add-post',
         element: (
           <Protected authentication>
             <AddPost />
@@ -58,7 +58,7 @@ const router = createBrowserRouter([
         )
       },
       {
-        path: '/edit-posts/:slug',
+        path: '/edit-post/:slug',// :slug the reason we use it so we can grab the slug when using useParams
         element: (
           <Protected authentication>
             <EditPost />
